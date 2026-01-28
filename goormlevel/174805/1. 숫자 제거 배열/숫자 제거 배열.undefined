@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n,k = input().split()
+a = input().split()
+answer=[]
+for i in range(int(n)):
+	if k not in a[i] :
+		answer.append(i)
+print(len(answer))	
