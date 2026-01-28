@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n = int(input())
+numbers = list(map(int, input().split()))
+answer = str(oct(sum(numbers)))
+print(answer[2:])
