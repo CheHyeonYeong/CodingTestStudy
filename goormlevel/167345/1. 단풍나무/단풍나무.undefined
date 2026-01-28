@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+from collections import deque
+
+n = int(input())
+
+a = [list(map(int,input().split())) for _ in range(n)]
+
+dx = [1,-1,0,0]
+dy = [0,0,1,-1]
+
+days = 0
+
+while True:
+	changed = False
+	dec = [[0]*n for _ in range(n)]
+
+	for i in range(n):
+		for j in range(n):
+			if a[i][j] > 0:
+				cnt = 0
+				for d in range(4):
+					ni, nj = i + dx[d], j + dy[d]
+					if 0 <= ni < n and 0 <= nj < n:
+						if a[ni][nj] == 0:
+							cnt += 1
+				dec[i][j] = cnt
+
+	# 밤에 동시에 반영
+	for i in range(n):
+		for j in range(n):
+			if a[i][j] > 0 :
+				new_val = max(0, a[i][j] - dec[i][j])
+				if new_val != a[i][j]:
+					changed = True
+				a[i][j] = new_val
+
+	if not changed:
+		break
+	
+	days+=1
+
+print(days)
+	
