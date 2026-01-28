@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n,m = map(int, input().split())
+ants = []
+nants = []
+
+for i in range(n):
+	grounds = list(map(int, input().split()))
+	for j in range(n):
+		if grounds[j] == 1:
+			ants.append([i,j])
+		elif grounds[j] == 2:
+			nants.append([i,j])
+
+antsLen = len(ants)
+
+for y1, x1 in ants:
+	min_dist = 9 ** 9
+	for y2, x2 in nants:
+		dist = abs(y2 - y1) + abs(x2 - x1)
+		min_dist = min(min_dist, dist)
+	if min_dist > m:
+		antsLen -= 1
+print(antsLen)
+ 
+	
