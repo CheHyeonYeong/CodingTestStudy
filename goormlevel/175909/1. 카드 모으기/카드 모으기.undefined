@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n, m = map(int, input().split())
+answer = set()
+
+for i in range(m):
+	if len(answer) < n:
+		answer.add(int(input()))
+	if len(answer) == n:
+		print(i+1)
+		break
+
+if len(answer) < n :
+	print(-1)
