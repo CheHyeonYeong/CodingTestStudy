@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n,m = map(int, input().split())
+S = input()
+E = input()
+while S in E:
+	E = E.replace(S, "")
+print(E if E else "EMPTY")
