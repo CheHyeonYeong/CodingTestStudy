@@ -1,0 +1,21 @@
+
+구름, 바람 = input().split()
+day = int(input())
+구름 = int(구름)
+바람 = int(바람)
+
+flag = False  # false : 구름 -> 바람, true : 바람 -> 구름
+for i in range(day):
+    if flag: # true : 바람 -> 구름
+        a = 바람 // 2
+        isBool = 바람%2==0
+        바람 = a
+        구름 = 구름 + a if isBool else 구름 + a +1
+        flag = False
+    else:
+        a = 구름 // 2
+        isBool = 구름%2==0
+        구름 = a
+        바람 = 바람 + a if isBool else 바람 + a + 1
+        flag = True
+print(구름, 바람)
