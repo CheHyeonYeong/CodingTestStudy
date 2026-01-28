@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n = int(input())
+answer = [x for x in range(1,n*n +1)]
+index = 0
+for i in range(n):
+	for j in range(n):
+		print(answer[index], end=" " if j != n-1 else "")
+		index+=1
+	print()
