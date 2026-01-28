@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n = int(input())
+cnt = 0
+money = [40, 20,10,5,1]
+for i in range(5):
+	cnt += n//money[i]
+	n %= money[i]
+print(cnt)
