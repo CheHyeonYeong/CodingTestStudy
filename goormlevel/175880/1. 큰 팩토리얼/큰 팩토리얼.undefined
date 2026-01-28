@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import math
+
+n = int(input())
+MAX_FAC = 1000000007
+if math.factorial(n) < MAX_FAC :
+	print(math.factorial(n))
+else :
+	print(math.factorial(n) % MAX_FAC)
