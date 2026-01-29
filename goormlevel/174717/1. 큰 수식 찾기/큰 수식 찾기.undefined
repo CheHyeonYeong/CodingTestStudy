@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+# 입력
+expr1, expr2 = input().split()
+
+# 계산
+val1 = eval(expr1)
+val2 = eval(expr2)
+
+# 출력
+print(max(val1, val2))
