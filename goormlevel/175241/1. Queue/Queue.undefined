@@ -1,0 +1,13 @@
+n, k = map(int, input().split())
+
+num = []
+result = []
+for i in range(n):
+    s = input().split()
+    if s[0] == 'push': 
+      if len(num) < k :
+        num.append(s[1])
+      else:
+        result.append("Overflow")
+    elif s[0] == 'pop': result.append(num.pop(0) if num else "Underflow")
+print('\n'.join(result))
