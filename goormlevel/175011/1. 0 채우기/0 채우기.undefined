@@ -1,0 +1,13 @@
+n = int(input())
+answer =[[0]*n]*n
+a,b = 0,0
+for i in range(n):
+	answer[i] = list(map(int , input().split()))
+	if 0 in answer[i] : 
+		a,b = i,answer[i].index(0)
+
+a = sum(answer[a])
+k = 0
+for i in range(n):
+	k += answer[n-i-1][b]
+print(a + k)
