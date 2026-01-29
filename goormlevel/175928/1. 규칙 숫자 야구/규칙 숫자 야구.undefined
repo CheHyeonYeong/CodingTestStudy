@@ -1,0 +1,54 @@
+def get_status(answer, guess):
+    """각 자리의 Strike, Ball, Fail 상태 반환"""
+    status = []
+    for i in range(4):
+        if guess[i] == answer[i]:
+            status.append('S')  # Strike
+        elif guess[i] in answer:
+            status.append('B')  # Ball
+        else:
+            status.append('F')  # Fail
+    return status
+
+def solve(answer, guess):
+    guess = list(guess)
+    count = 0
+    
+    while True:
+        count += 1
+        status = get_status(answer, guess)
+        
+        # 승리 조건: 4 Strike
+        if status.count('S') == 4:
+            return count
+        
+        has_ball = 'B' in status
+        
+        # 2번 과정: Fail 처리
+        for i in range(4):
+            if status[i] == 'F':
+                val = int(guess[i])
+                while True:
+                    val = (val + 1) % 10
+                    new_char = str(val)
+                    if new_char not in guess:
+                        guess[i] = new_char
+                        break
+        
+        # 3번 과정: Ball이 있었다면 Strike 아닌 자리들 오른쪽 회전
+        if has_ball:
+            # Strike가 아닌 자리의 인덱스들
+            non_strike_indices = [i for i in range(4) if status[i] != 'S']
+            
+            if len(non_strike_indices) > 1:
+                # 해당 자리들의 값 추출
+                values = [guess[i] for i in non_strike_indices]
+                # 오른쪽으로 한 칸씩 회전 (마지막 -> 첫번째)
+                rotated = [values[-1]] + values[:-1]
+                # 다시 배치
+                for idx, i in enumerate(non_strike_indices):
+                    guess[i] = rotated[idx]
+
+answer = input().strip()
+guess = input().strip()
+print(solve(answer, guess))
