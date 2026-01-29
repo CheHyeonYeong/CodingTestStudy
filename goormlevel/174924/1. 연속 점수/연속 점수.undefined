@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n = int(input())
+answer = list(map(int, input().split()))
+max_answer = max(answer)
+count = 0
+best = 0
+for i in range(n-1):
+	pre = answer[i]
+	if pre + 1 == answer[i+1]:
+		if count == 0 :
+			count += pre
+		count += answer[i+1]
+	else:
+		best = max(count, best)
+		count = 0
+
+best = max(count, best)
+print(max(best, max_answer))
