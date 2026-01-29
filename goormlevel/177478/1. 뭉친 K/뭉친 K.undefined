@@ -1,0 +1,40 @@
+from collections import deque
+
+n = int(input())
+x, y = map(int, input().split())
+x -= 1
+y -= 1
+
+board = [list(map(int, input().split())) for _ in range(n)]
+visited = [[False]*n for _ in range(n)]
+
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+
+K = board[x][y]
+answer = 0
+
+def bfs(sx, sy):
+    q = deque()
+    q.append((sx, sy))
+    visited[sx][sy] = True
+    cnt = 1
+
+    while q:
+        cx, cy = q.popleft()
+        for d in range(4):
+            nx = cx + dx[d]
+            ny = cy + dy[d]
+            if 0 <= nx < n and 0 <= ny < n:
+                if not visited[nx][ny] and board[nx][ny] == K:
+                    visited[nx][ny] = True
+                    q.append((nx, ny))
+                    cnt += 1
+    return cnt
+
+for i in range(n):
+    for j in range(n):
+        if board[i][j] == K and not visited[i][j]:
+            answer = max(answer, bfs(i, j))
+
+print(answer)
