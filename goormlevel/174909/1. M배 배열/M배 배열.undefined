@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n,m = map(int, input().split())
+nums = list(map(int, input().split()))
+strs = ''
+for x in nums:
+	if x % m ==0:
+		strs += str(x)
+	else:
+		strs += str(x*m)
+	strs +=" "
+print(strs[:-1])
