@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n, k = map(int, input().split())
+
+stack = []
+result = []
+
+for _ in range(n):
+	a = list(input().split())
+	if a[0] == "pop":
+		if not stack:
+			result.append("Underflow")
+		else:
+			result.append(stack.pop())
+	elif a[0] == "push" :
+		if len(stack) < k:
+			stack.append(a[1])
+		else:
+			result.append("Overflow")
+print('\n'.join(result))
