@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+n = int(input())
+
+best_idx = 1
+best_w, best_v = map(int, input().split())
+
+for i in range(2, n+1):
+	w,v = map(int, input().split()) # 무게 w, 부피 v
+	
+	# 밀도 비교: w/v > best_w/best_v ?
+	if w * best_v > best_w * v:
+		best_idx = i
+		best_w, best_v = w, v
+
+	elif w * best_v == best_w * v:
+		if w > best_w: # 무게끼리 비교
+			best_idx = i
+			best_w, best_v = w, v
+
+		# 무게도 같으면 번호 작은 것 유지 → 아무것도 안 함
+
+print(best_idx)
