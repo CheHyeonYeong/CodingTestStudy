@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+mapping = {
+	")":"(",
+	"}":"{", 
+	"]":"["
+}
+
+str = input()
+stack = []
+flag = True
+
+for s in str:
+	if s in mapping.values():
+		stack.append(s)
+	else:
+		if not stack or stack[-1] != mapping[s]:
+			flag = False
+			break
+		stack.pop()
+		
+if stack : 
+	flag = False
+
+print("YES" if flag else "NO")
