@@ -9,18 +9,11 @@ def solution(money):
         return max(money)
     
     def rob(start, end):
-        """
-        start부터 end까지의 집을 대상으로 최대 금액 계산
-        """
-        prev2 = 0  # dp[i-2]
-        prev1 = 0  # dp[i-1]
-        
+        dp = [0] * (n+1)
         for i in range(start, end):
-            current = max(prev1, money[i] + prev2)
-            prev2 = prev1
-            prev1 = current
+            dp[i] = max(dp[i-1], money[i] + dp[i-2])
         
-        return prev1
+        return dp[end-1]
     
     # 경우 1: 첫 집 포함 (0 ~ n-2)
     case1 = rob(0, n - 1)
