@@ -1,12 +1,18 @@
-def solution(s):
+def solution(str):
     stack = []
+    flag = True
+    mapping = {
+        ")" : "("
+    }
     
-    for char in s:
-        if char == '(':
-            stack.append(char)
-        elif char == ')':
-            if not stack:
-                return False
+    for s in str:
+        if s in mapping.values():
+            stack.append(s)
+        else:
+            if not stack or stack[-1] != mapping[s]:
+                flag = False
+                break
             stack.pop()
+    if stack: flag = False
     
-    return len(stack) == 0
+    return flag
