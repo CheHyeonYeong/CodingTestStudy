@@ -1,0 +1,5 @@
+n = int(input())
+an = set(map(int, input().split()))
+answer = list(an)
+answer.sort()
+print(" ".join(map(str, answer)))
