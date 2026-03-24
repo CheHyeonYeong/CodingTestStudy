@@ -37,7 +37,8 @@
 |-- goormlevel/
 |-- leetCode/       (submodule)
 |-- KUT/            (학교 과제)
-`-- example/
+|-- example/
+`-- example2/
 ```
 
 ## 사용 언어
@@ -49,3 +50,8 @@
 
 - [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub): 백준 자동 업로드
 - [LeetHub](https://github.com/CheHyeonYeong/leetCode): LeetCode 풀이 저장소 (submodule)
+
+## 템플릿
+
+- `example/`: 입력 파일 기반 로컬 테스트용 예제
+- `example2/`: LeetCode / 프로그래머스 제출용 Python 템플릿

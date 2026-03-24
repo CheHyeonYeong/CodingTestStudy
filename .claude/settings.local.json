@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(git rm:*)",
+      "Bash(git submodule:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "WebFetch(domain:www.acmicpc.net)",
+      "WebSearch"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-import sys
+﻿import sys
 from io import StringIO
 
 # ========== 로컬 테스트용 ==========
@@ -6,11 +6,5 @@ from io import StringIO
 test_input = open("input.txt").read()
 sys.stdin = StringIO(test_input)
 # ==================================
-
+import sys
 input = sys.stdin.readline
-
-# 풀이 시작
-n = int(input())
-arr = list(map(int, input().split()))
-
-print(sum(arr))
