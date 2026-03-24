@@ -37,8 +37,7 @@
 |-- goormlevel/
 |-- leetCode/       (submodule)
 |-- KUT/            (학교 과제)
-|-- example/
-`-- example2/
+`-- example/
 ```
 
 ## 사용 언어
@@ -53,5 +52,6 @@
 
 ## 템플릿
 
-- `example/`: 입력 파일 기반 로컬 테스트용 예제
-- `example2/`: LeetCode / 프로그래머스 제출용 Python 템플릿
+- `example/백준/`: 입력 파일 기반 로컬 테스트용 예제
+- `example/leetCode/`: LeetCode 제출용 Python 템플릿
+- `example/프로그래머스/`: 프로그래머스 제출용 Python 템플릿
