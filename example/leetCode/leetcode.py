@@ -1,16 +1,14 @@
 import re
 
-
 class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        return sorted(s) == sorted(t)
-
+    def rotateString(self, s: str, goal: str) -> bool:
+        return ;
 
 if __name__ == "__main__":
     solver = Solution()
 
-    s = "anagram"
-    t = "nagaram"
+    s = "abcde"
+    t = "cdeab"
 
-    result = solver.isAnagram(s,t)
+    result = solver.rotateString(s,t)
     print(result)
